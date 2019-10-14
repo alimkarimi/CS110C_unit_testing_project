@@ -87,3 +87,4 @@ BOOST_AUTO_TEST_CASE_TEMPLATE( mid5_test, T, longLong_types ) //this will work o
   std::cin >> number2;
 
   BOOST_TEST( mid_Value(number1, number2)  == (float)((number1+number2)/2)); //the boost will create a middle sormula by itself and if the answer is the same as the function mid_Value then it will be no mistake
+}
