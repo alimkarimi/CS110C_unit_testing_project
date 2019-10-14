@@ -29,11 +29,27 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(10) == 3628800 );
 }
 
-TEST_CASE( "Addition with different types inputs")
+TEST_CASE( "Addition with ints")
 {
 	REQUIRE(add(1,2) == 3);
-	REQUIRE(add(std::string ("hello"),std::string ("hi")) == std::string ("hellohi"));
-	REQUIRE(add(2.9,9.424242820) == 12.32424282);
+}
+
+TEST_CASE("Addition with strings")
+{
+        REQUIRE(add(std::string ("hello"),std::string ("hi")) == std::string ("hellohi"));
+}
+
+TEST_CASE("Addition with doubles")
+{
+        REQUIRE(add(2.9,9.424242820) == 12.32424282);
+}
+
+TEST_CASE("Testing less than")
+{
 	REQUIRE(add(2, 500) <= 505);
-	REQUIRE(add(2,4) == 9);
+}
+
+TEST_CASE("Showing a failure")
+{
+	REQUIRE(add(1,1)!= 2);
 }
