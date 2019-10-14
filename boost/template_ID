@@ -3,12 +3,12 @@
 #include <boost/test/included/unit_test.hpp>
 #include <boost/mpl/list.hpp>
 
-template <class T>
+template <class T> //one template for name
 T search_Name(T a)
 {
   T name;
 
-  std::cout << "Reenter your name:" << std::endl;
+  std::cout << "Reenter your name:" << std::endl; //this will automatically appear after you enter the name for testing
   std::cin >> name;
 
   return name;
@@ -24,22 +24,22 @@ BOOST_AUTO_TEST_CASE(equal_Names)
   std::cin >> info_Name;
 
 
-  BOOST_TEST( search_Name(info_Name)  == (std::string)info_Name);
+  BOOST_TEST( search_Name(info_Name)  == (std::string)info_Name); // this will let you save your first name and rewrite the new name
 }
 
-template <class T>
+template <class T> //template for the ID
 T search_ID(T a)
 {
   T look_ID;
 
-  std::cout << "Reenter your ID:" << std::endl;
+  std::cout << "Reenter your ID:" << std::endl; //will appear after you enter the first time ID 
   std::cin >> look_ID;
 
   return look_ID;
 }
 
 
-typedef boost::mpl::list<int> test_ID;
+typedef boost::mpl::list<int> test_ID; //you need to create two different mlp so you are able to use int and std::string without having problems at compiling
 
 BOOST_AUTO_TEST_CASE(look_ID)
 {
