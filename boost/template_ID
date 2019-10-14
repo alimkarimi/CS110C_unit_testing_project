@@ -1,0 +1,52 @@
+#include <iostream>
+#define BOOST_TEST_MODULE example
+#include <boost/test/included/unit_test.hpp>
+#include <boost/mpl/list.hpp>
+
+template <class T>
+T search_Name(T a)
+{
+  T name;
+
+  std::cout << "Reenter your name:" << std::endl;
+  std::cin >> name;
+
+  return name;
+}
+
+
+typedef boost::mpl::list<std::string> test_Name;
+
+BOOST_AUTO_TEST_CASE(equal_Names)
+{
+  std::string info_Name;
+  std::cout << "enter the name:" << std::endl;
+  std::cin >> info_Name;
+
+
+  BOOST_TEST( search_Name(info_Name)  == (std::string)info_Name);
+}
+
+template <class T>
+T search_ID(T a)
+{
+  T look_ID;
+
+  std::cout << "Reenter your ID:" << std::endl;
+  std::cin >> look_ID;
+
+  return look_ID;
+}
+
+
+typedef boost::mpl::list<int> test_ID;
+
+BOOST_AUTO_TEST_CASE(look_ID)
+{
+  int info_ID;
+  std::cout << "enter your ID:" << std::endl;
+  std::cin >> info_ID;
+
+  BOOST_TEST( search_ID(info_ID)  == (int)info_ID);
+  
+}
