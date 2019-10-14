@@ -2,6 +2,16 @@
 #include "gtest/gtest.h"
 #include <string>
 
+/*
+    IMPORTANT: READ INSTRUCTIONS TO COMPILE.
+    * To compile on terminal, use:
+    g++ -std=c++11 -stdlib=libc++  gtest_example_alim.cc add_function.cc gtest_main.cc -lgtest -lpthread -o executeThis
+    Where -std is the C++ version to compile, gtest_example.cc is the C++ file with the user written tests, add_function.cc 
+    is the C++ file with the function being called in the tests (tests are in gtest_example.cc), gtest_main.cc is the included 
+    file from the GoogleTest git repository, and "executeThis" is the file name that the executable will be written to. 
+    "executeThis" can be named anything. 
+*/
+
 TEST(AdditionTest, CanAddInts){
 EXPECT_EQ(add(1,1), 2);
 
