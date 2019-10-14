@@ -23,7 +23,7 @@ T prime_numbers(T a)
 
 
 //Test 1
-typedef boost::mpl::list<int> test_types;
+typedef boost::mpl::list<int> test1_types;
 
 BOOST_AUTO_TEST_CASE(test_prime)
 {
@@ -52,7 +52,7 @@ T factorial(T a)
 }
 
 //Test 2
-typedef boost::mpl::list<long> test_types;
+typedef boost::mpl::list<long> test2_types;
 
 BOOST_AUTO_TEST_CASE(exponential_of_10)
 {
